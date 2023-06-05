@@ -1,6 +1,6 @@
 import initScrollSuave from "./modules/srcoll-suave.js";
 import Accordion from "./modules/accordion.js";
-import initTabNav from "./modules/tab-nav.js";
+import TabNav from "./modules/tab-nav.js";
 import initModal from "./modules/modal.js";
 import initTooltip from "./modules/tooltip.js";
 import initDropdownMenu from "./modules/dropdown-menu.js";
@@ -13,6 +13,10 @@ import initAnimacaoScroll from "./modules/scroll-animacao.js";
 const accordion = new Accordion(".js-accordion dt");
 accordion.init();
 
+const tabNav = new TabNav(".js-tabmenu li", ".js-tabcontent section");
+tabNav.init();
+
+
 initScrollSuave();
 initAnimacaoScroll();
 initTabNav();
@@ -23,4 +27,4 @@ initMenuMobile();
 initFuncionamento();
 initFetchAnimais();
 initFetchBitcoin();
-//
+
