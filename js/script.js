@@ -2,13 +2,14 @@ import initScrollSuave from "./modules/srcoll-suave.js";
 import Accordion from "./modules/accordion.js";
 import TabNav from "./modules/tab-nav.js";
 import Modal from "./modules/modal.js";
-import initTooltip from "./modules/tooltip.js";
+import Tooltip from "./modules/tooltip.js";
 import initDropdownMenu from "./modules/dropdown-menu.js";
 import initMenuMobile from "./modules/menu-mobile.js";
 import initFuncionamento from "./modules/funcionamento.js";
 import initFetchAnimais from "./modules/fetch-animas.js";
 import initFetchBitcoin from "./modules/fetch-bitcoin.js";
 import initAnimacaoScroll from "./modules/scroll-animacao.js";
+import initAnimaNumeros from "./modules/anima-numeros.js";
 
 const accordion = new Accordion(".js-accordion dt");
 accordion.init();
@@ -23,10 +24,13 @@ const modal = new Modal(
 );
 modal.init();
 
+const tooltip = new Tooltip("[data-tooltip]");
+tooltip.init();
+
 initScrollSuave();
 initAnimacaoScroll();
-initTabNav();
-initTooltip();
+
+initAnimaNumeros();
 initDropdownMenu();
 initMenuMobile();
 initFuncionamento();
