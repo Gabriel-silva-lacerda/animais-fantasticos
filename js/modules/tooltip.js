@@ -8,12 +8,11 @@ export default class Tooltip {
     this.onMouseOver = this.onMouseOver.bind(this);
   }
 
-
   // Move a tooltip com base em seus estilos
   // de acordo com a posição do mouse
   onMouseMove(event) {
     this.tooltipBox.style.top = `${event.pageY + 20}"px"`;
-    if(event.pageX + 240 > window.innerWidth){
+    if (event.pageX + 240 > window.innerWidth) {
       this.tooltipBox.style.left = `${event.pageX - 190}"px"`;
     } else {
       this.tooltipBox.style.left = `${event.pageX + 20}"px"`;
@@ -45,7 +44,6 @@ export default class Tooltip {
     currentTarget.addEventListener("mouseleave", this.onMouseLeave);
     currentTarget.addEventListener("mousemove", this.onMouseMove);
   }
-
 
   // Adiciona os eventos de mouseover a cada tolltip
   addTooltipsEvents() {
