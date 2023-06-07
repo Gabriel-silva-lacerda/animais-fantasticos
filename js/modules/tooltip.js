@@ -11,19 +11,19 @@ export default class Tooltip {
   // Move a tooltip com base em seus estilos
   // de acordo com a posição do mouse
   onMouseMove(event) {
-    this.tooltipBox.style.top = `${event.pageY + 20}"px"`;
+    this.tooltipBox.style.top = `${event.pageY + 20}px`;
     if (event.pageX + 240 > window.innerWidth) {
-      this.tooltipBox.style.left = `${event.pageX - 190}"px"`;
+      this.tooltipBox.style.left = `${event.pageX - 190}px`;
     } else {
-      this.tooltipBox.style.left = `${event.pageX + 20}"px"`;
+      this.tooltipBox.style.left = `${event.pageX + 20}px`;
     }
   }
 
   // Remove a tolltip e os eventos de mousemove e mouseleave
   onMouseLeave({ currentTarget }) {
     this.tooltipBox.remove();
-    currentTarget.removeEventListener("mousemove", this.onMouseLeave);
-    currentTarget.removeEventListener("mousemove", this.onMouseMove);
+    currentTarget.removeEventListener('mouseleave', this.onMouseLeave);
+    currentTarget.removeEventListener('mousemove', this.onMouseMove);
   }
 
   // Criar a tooltip box e coloca no body
@@ -33,7 +33,7 @@ export default class Tooltip {
     tooltipBox.classList.add("tooltip");
     tooltipBox.innerText = text;
     document.body.appendChild(tooltipBox);
-    this.tooltips = tooltipBox;
+    this.tooltipBox = tooltipBox;
   }
 
   // Cria a tooltip e adiciona os eventos
@@ -59,3 +59,4 @@ export default class Tooltip {
     return this;
   }
 }
+
