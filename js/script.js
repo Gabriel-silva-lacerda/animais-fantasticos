@@ -9,7 +9,7 @@ import Funcionamento from "./modules/funcionamento.js";
 import fetchAnimais from "./modules/fetch-animas.js";
 import fetchBitcoin from "./modules/fetch-bitcoin.js";
 import ScrollAnima from "./modules/scroll-anima.js";
-
+import SlideNav from "./modules/slide.js";
 const accordion = new Accordion(".js-accordion dt");
 accordion.init();
 
@@ -43,3 +43,7 @@ initScrollSuave();
 fetchAnimais("./animaisapi.json", ".numeros-grid");
 
 fetchBitcoin("https://blockchain.info/ticker", ".btc-preco");
+
+const slide = new SlideNav(".slide", ".slide-wrapper");
+slide.init();
+slide.addControl(".custom-controls");
